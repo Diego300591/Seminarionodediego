@@ -10,4 +10,12 @@ router.get("/crearpartida/",function(req,res){
   res.render("crearpartida",{});
 });
 
+router.get("/chat/",function(req,res){
+  res.render("chat",{});
+});
+
+router.get("/saladechat/",function(req,res){
+  res.render("saladechat",{});
+});
+
 module.exports = router;

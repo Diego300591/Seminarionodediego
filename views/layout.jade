@@ -5,12 +5,15 @@ block head
 	link(rel='stylesheet',href='stylesheets/bootstrap.min.css')
 	script(type='text/javascript',src='/javascripts/jquery-2.1.0.min.js')
 	script(type='text/javascript',src='/javascripts/bootstrap.min.js')
+	script(type='text/javascript',src='/socket.io/socket.io.js')
 body
 	ul.menu
 		li(class="active")
 			a(href="/") Principal
 		li(class="active")
 			a(href="/crearpartida/") Crear partida
+		li(class="active")
+			a(href="/chat/") Chat
 	header#banner
 		h1 
 			center BIENVENIDOS A LA TRIVIA
