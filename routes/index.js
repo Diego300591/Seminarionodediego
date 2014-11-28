@@ -6,4 +6,8 @@ router.get('/', function(req, res) {
   res.render('index', { title: 'Express' });
 });
 
+router.get("/crearpartida/",function(req,res){
+  res.render("crearpartida",{});
+});
+
 module.exports = router;

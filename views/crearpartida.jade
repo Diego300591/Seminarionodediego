@@ -1,0 +1,64 @@
+extends layout
+block contenido
+	form
+		label(class="control-label") Titulo de la partida
+		input(type="text")
+		br
+		button(type="submit") Enviar
+		label(class="control-label") Tipo de partida
+		input(type="radio" name="tipo" value="publico") Publico
+		br
+		input(type="radio" name="tipo" value="privado") Privado  
+		br
+		label(class="control-label") Preguntas
+		input(type="radio" name="cantidad" value="10") 10
+		br
+		input(type="radio" name="cantidad" value="20") 20
+		br
+		input(type="radio" name="cantidad" value="30") 30
+		br
+		input(type="radio" name="cantidad" value="40") 40
+		br
+		input(type="radio" name="cantidad" value="50") 50
+		br
+		label(class="control-label") Tiempo de respuesta
+		input(type="radio" name="tiempo" value="10") 10 segundos
+		br
+		input(type="radio" name="tiempo" value="15") 15 segundos
+		br
+		input(type="radio" name="tiempo" value="20") 20 segundos
+		br
+		input(type="radio" name="tiempo" value="25") 25 segundos
+		br
+		input(type="radio" name="tiempo" value="30") 30 segundos
+		br
+		input(type="radio" name="tiempo" value="35") 35 segundos
+		br
+		input(type="radio" name="tiempo" value="40") 40 segundos
+		br
+		input(type="radio" name="tiempo" value="45") 45 segundos
+		br
+		input(type="radio" name="tiempo" value="50") 50 segundos
+		br
+		input(type="radio" name="tiempo" value="55") 55 segundos
+		br
+		input(type="radio" name="tiempo" value="60") 60tiempo segundos
+		br
+		label(class="control-label") Categorias
+		input(type="checkbox" name="categorias" value="arte") Arte y Literatura
+		br
+		input(type="checkbox" name="categorias" value="cine") Cine y Television
+		br
+		input(type="checkbox" name="categorias" value="geo") Geografia
+		br
+		input(type="checkbox" name="categorias" value="hist") Historia
+		br
+		input(type="checkbox" name="categorias" value="misc") Miscelanea
+		br
+		input(type="checkbox" name="categorias" value="mus") Musica
+		br
+		input(type="checkbox" name="categorias" value="ciencias") Ciencia y Naturaleza
+		br
+		input(type="checkbox" name="categorias" value="deportes") Deportes
+		br
+		button(type="submit") Enviar
