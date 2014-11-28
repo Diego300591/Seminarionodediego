@@ -1,0 +1,17 @@
+doctype 5 html
+block head
+	title=title
+	link(rel='stylesheet',href='stylesheets/style.css')
+	link(rel='stylesheet',href='stylesheets/bootstrap.min.css')
+	script(type='text/javascript',src='/javascripts/jquery-2.1.0.min.js')
+	script(type='text/javascript',src='/javascripts/bootstrap.min.js')
+body
+	ul.menu
+		li(class="active")
+			a(href="#") Principal
+		li(class="active")
+			a(href="#") Crear partida
+	header#banner
+		h1 
+			center BIENVENIDOS A LA TRIVIA
+	block contenido
