@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var io=require("socket.io");
 
 var app = express();
 
@@ -60,6 +61,41 @@ app.use(function(err, req, res, next) {
 module.exports = app;
 
 var PORT=3001;
-app.listen(PORT,function(){
+var server=app.listen(PORT,function(){
     console.log("Servidor corriendo en el puerto "+PORT);
-})
+});
+
+var nicknames=[];
+var sockets=io(server);
+sockets.on("connection",function(socket){
+    socket.on("mensajes",function(clientedata){
+        if(clientedata.nick===socket.nickname)
+        {
+            sockets.sockets.emit("mensajes",clientedata);
+            return;
+        }
+        sockets.sockets.emit("mensajes",false);
+    });
+    socket.on("setnickname",function(clientedata){
+        if(verificarCuenta(clientedata.nick)){
+            nicknames.push(clientedata);
+            socket.nickname=clientedata.nick;
+            socket.emit("setnickname",{"server":true});
+            return;
+        }
+        socket.emit("setnickname",{"server":"El nick no esta disponible"});
+        return;
+    });
+});
+
+var verificarCuenta=function(ins)
+{
+    for(var i=0;i<nicknames.length;i++)
+    {
+        if(nicknames[i].nick==ins)
+        {  
+            return false;
+        }
+    }
+    return true;
+}

@@ -23,8 +23,8 @@ $(function($) {
 			dataType: 'html',
 			data: {},
 		})
-		.done(function() {
-			$("#content").html(html);
+		.done(function(html) {
+			$("#contenido").html(html);
 			enabledchat();
 		})
 		.fail(function() {
